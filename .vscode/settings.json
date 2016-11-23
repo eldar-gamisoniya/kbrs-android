@@ -3,5 +3,7 @@
     "files.exclude": {
         "**/*.js": true,
         "**/*.js.map": true
-    }
+    },
+    "tslint.rulesDirectory": "./node_modules/codelyzer",
+    "typescript.tsdk": "./node_modules/typescript/lib"
 }

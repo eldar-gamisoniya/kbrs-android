@@ -1,0 +1,63 @@
+<GridLayout
+  rows="auto, auto, auto">
+
+  <!-- Row 1: The custom action bar -->
+  <GridLayout
+    row="0"
+    columns="44, *, auto"
+    class="action-bar-custom">
+    <Label
+      col="1"
+      text="Notes"></Label>
+    
+    <!-- Wrap the image in a StackLayout to give it a bigger tap target -->
+    <StackLayout
+      col="2"
+      (tap)="showMenu()">
+      <Image
+        src="res://menu"
+        stretch="none"></Image>
+    </StackLayout>
+  </GridLayout>
+
+  <GridLayout
+    row="1"
+    columns="*, auto, auto"
+    backgroundColor="#FFFFFF"
+    class="add-bar">
+    <SearchBar
+    col="0"
+    #searchBar hint="Search note"
+    [(ngModel)]="noteName"
+    [isEnabled]="!isLoading" 
+    (submit)="onSubmit()"></SearchBar>
+    
+    <StackLayout
+     col="1"
+     class="add-bar-recent-container"
+     [isEnabled]="!isLoading"
+     (tap)="getFromStorage()">
+     <Label
+       class="add-bar-recent-toggle"
+       text="Local"></Label>
+    </StackLayout>
+    
+    <StackLayout
+     col="2"
+     class="add-bar-recent-container"
+     [isEnabled]="!isLoading"
+     (tap)="generateKeys()">
+     <Label
+       class="add-bar-recent-toggle"
+       text="Gen keys"></Label>
+    </StackLayout>
+  </GridLayout>
+
+  <TextView
+    row="2"
+    editable="false"
+    [text]="text"></TextView>
+
+</GridLayout>
+<ActivityIndicator
+  [busy]="isLoading"></ActivityIndicator>

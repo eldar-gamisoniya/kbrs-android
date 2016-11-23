@@ -4,17 +4,18 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { authProviders, appRoutes } from "./app.routing";
 import { AppComponent } from "./app.component";
-import { setStatusBarColors, BackendService, LoginService } from "./shared";
+import { setStatusBarColors, BackendService, SecirityService } from "./shared";
 
 import { LoginModule } from "./login/login.module";
-import { GroceriesModule } from "./groceries/groceries.module";
+import { NotesModule } from "./notes/notes.module";
+require("./shared/asynctest");
 
 setStatusBarColors();
 
 @NgModule({
   providers: [
     BackendService,
-    LoginService,
+    SecirityService,
     authProviders
   ],
   imports: [
@@ -22,7 +23,7 @@ setStatusBarColors();
     NativeScriptRouterModule,
     NativeScriptRouterModule.forRoot(appRoutes),
     LoginModule,
-    GroceriesModule,
+    NotesModule,
   ],
   declarations: [
       AppComponent,

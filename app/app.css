@@ -4,8 +4,8 @@ Page {
   background-color: white;
   font-size: 15;
 }
-.list-page {
-  background-image: url("res://bg_inner");
+.note-page {
+  background-image: url("res://bg_login");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -20,4 +20,16 @@ TextField {
 }
 .line-through {
   text-decoration: line-through;
+}
+
+ActivityIndicator {
+  horizontal-align: center;
+  vertical-align: center;
+  width: 100;
+  height: 100;
+}
+TextView {
+  height: 100%;
+  background-color: white;
+  opacity: 0.8;
 }

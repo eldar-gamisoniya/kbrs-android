@@ -5,15 +5,10 @@
     scaleY="1.4"
     class="background"
     (loaded)="startBackgroundAnimation(background)"></GridLayout>
-
   <StackLayout #initialContainer
     class="initial-container">
-    <Image
-      src="res://logo_login"
-      stretch="none"
-      class="initial-logo"></Image>
     <Label
-      text="GROCERIES"
+      text="NOTES"
       class="initial-label"></Label>
     <StackLayout
       (tap)="showMainContent()"
@@ -23,13 +18,12 @@
         class="initial-button-label"></Label>
     </StackLayout>
   </StackLayout>
-
   <StackLayout #mainContainer
     class="main-container">
     <Label
       class="main-label"
-      text="GROCERIES"
-      [color]="isLoggingIn? 'black' : 'white'"></Label>
+      text="Notes"
+      [color]="black"></Label>
 
     <GridLayout #formControls
       class="form-controls"
@@ -60,32 +54,13 @@
     </GridLayout>
 
     <Button
-      [text]="isLoggingIn ? 'Login' : 'Sign up'"
+      text="Login"
       [isEnabled]="!isAuthenticating"
       class="submit-button"
       (tap)="submit()"></Button>
 
-    <Label
-      class="forgot-password-label"
-      text="Forgot password?"
-      (tap)="forgotPassword()"
-      [opacity]="isLoggingIn ? 1 : 0"></Label>
-
-    <StackLayout #signUpStack
-      class="sign-up-stack"
-      (tap)="toggleDisplay()"
-      translateY="50">
-      <Label
-        [text]="isLoggingIn ? 'Sign up here' : 'Back to login'"></Label>
-    </StackLayout>
   </StackLayout>
 
-  <!-- The fruit logo that appears within the container -->
-  <AbsoluteLayout #logoContainer
-    class="logo-container">
-    <Image
-      src="res://logo_login"
-      stretch="none"></Image>
-  </AbsoluteLayout>
+  <!-- The fruit logo that appears within the container -->s
 
 </GridLayout>

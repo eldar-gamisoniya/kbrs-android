@@ -25,7 +25,7 @@
 }
 .initial-button {
   background-color: white;
-  color: #CB1D00;
+  color: #536DFE;
   height: 45;
   width: 275;
   vertical-align: center;
@@ -57,7 +57,7 @@ Button, TextField {
   margin-bottom: 10;
 }
 .submit-button {
-  background-color: #CB1D00;
+  background-color: #536DFE;
   color: white;
   margin-top: 20;
 }
@@ -67,14 +67,6 @@ Button, TextField {
   margin-left: 20;
   margin-bottom: 45;
   color: black;
-}
-.sign-up-stack {
-  background-color: #311217;
-}
-.sign-up-stack Label {
-  color: white;
-  horizontal-align: center;
-  font-size: 15;
 }
 
 .logo-container {
